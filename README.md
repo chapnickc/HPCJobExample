@@ -6,17 +6,17 @@ The only major difference between Apex and Kepler is the server path.**
 
 #  The Terminal
 
-Before going any further, you should be reasonable comfortable with navigating a command-line 
+Before going any further, you should be reasonably comfortable with navigating a command-line 
 Linux environment. If you are using OSX or any major Linux distribution, this is the bash shell 
-and can be accessed by opening the "Terminal" application. If you are using Windows 10 you can 
+and can be accessed using the "Terminal" application. If you are running Windows 10 you can 
 now natively run bash natively as shown [here](http://www.howtogeek.com/265900/everything-you-can-do-with-windows-10s-new-bash-shell/). 
 If you are running an earlier version of Windows, you will need to install [PuTTY](http://www.putty.org/). 
 
 Once you have a bash shell, you should get comfortable with basic file operations such as:
 
-    - Listing the contents of a directory (folder)
-    - Creating and moving between directories
-    - Renaming files
+- Listing the contents of a directory (folder)
+- Creating and moving between directories
+- Renaming files
 
 Part 1 of [this tutorial](http://korflab.ucdavis.edu/Unix_and_Perl/current.html), written by professors at 
 UC Davis, does a great job covering these topics. I used it when getting started and found it to be very helpful.
@@ -52,7 +52,7 @@ As with any shell command, type `man passwd` for more information.
 
 Once you've connected to Kepler you will be in your home directory on the login node. 
 There will be a welcome message, showing the node names, and helpful links.
-A copy of this welcome page can be found [here](https://sites.google.com/a/slu.edu/atg/getting-started)
+A copy of this welcome page can be found [here](https://sites.google.com/a/slu.edu/atg/getting-started).
 
 
 ------------------------------------------------------------
@@ -103,8 +103,8 @@ qsub -q std script_name
 where `script_name` is replaced with the name of your job script (ie. `run.sh`).
 
 There are a number of options you can use with the `qsub` command to do things like name your job, 
-specify your queue (using the `-q` option as shown above), and more. There are a few examples in script `run.sh`
-in this project. 
+specify your queue (using the `-q` option as shown above), and more. There are a few examples in script `run.sh` that 
+are discussed in the [Non-Interactive Job Example](#non-interactive-job-example) in this project. 
 
 For more information please see the "Job Input and Output" section of [this article](http://genomics.princeton.edu/support/grids/sge.shtml).
 
