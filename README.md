@@ -81,12 +81,12 @@ To enter an interactive login session, you can use one of Kepler's two interacti
     2. apprun_mnt_xfs (for nodes that have access to the infiniband storage space)
 
 Use the following syntax:
+
 ```bash
 qlogin -q apprun
 ```
 
 where the `-q` option specifies the queue you want to use.
-
 
 
 ## Non-Interactive Jobs
@@ -123,7 +123,7 @@ commit the changes, and update Kepler's copy when you are ready to execute code.
 First, login to Kepler and create a local copy of the directory by entering:
 
 ```
-git clone https://github.com/chapnickc/KeplerJobExample
+git clone https://github.com/chapnickc/HPCJobExample
 ```
 
 
