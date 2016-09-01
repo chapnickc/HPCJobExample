@@ -21,6 +21,7 @@ Once you have a bash shell, you should get comfortable with basic file operation
 Part 1 of [this tutorial](http://korflab.ucdavis.edu/Unix_and_Perl/current.html), written by professors at 
 UC Davis, does a great job covering these topics. I used it when getting started and found it to be very helpful.
 
+------------------------------------------------------------
 
 # Connect to Kepler:
 
@@ -54,6 +55,8 @@ There will be a welcome message, showing the node names, and helpful links.
 A copy of this welcome page can be found [here](https://sites.google.com/a/slu.edu/atg/getting-started)
 
 
+------------------------------------------------------------
+
 # Jobs on the High-Performance Cluster
 
 The HPC uses a version of the [Sun Grid Engine](https://en.wikipedia.org/wiki/Oracle_Grid_Engine) to 
@@ -65,8 +68,8 @@ where it will run until completion.
 
 When using Kepler, there are two types of jobs to consider:
 
-    - *interactive* jobs 
-    - *non-interactive* jobs
+- *interactive* jobs 
+- *non-interactive* jobs
 
 
 ## Interactive Jobs
@@ -105,7 +108,7 @@ in this project.
 
 For more information please see the "Job Input and Output" section of [this article](http://genomics.princeton.edu/support/grids/sge.shtml).
 
-
+------------------------------------------------------------
 
 # A Note on Project Management
 
@@ -117,6 +120,7 @@ Due to both data-storage constraints, it is best practice to make your
 directories on Kepler "fetch-only". This means that you edit the code on your machine, 
 commit the changes, and update Kepler's copy when you are ready to execute code.
 
+------------------------------------------------------------
 
 # Non-Interactive Job Example
 
@@ -126,9 +130,9 @@ First, login to Kepler and create a local copy of the directory by entering:
 git clone https://github.com/chapnickc/HPCJobExample
 ```
 
-
-In this case, we want to run the script "run.sh". The corresponding syntax is 
-
+The job script in this example is `run.sh`. It runs a simple MATLAB script which performs 
+a basic file I/O operation, then prints the time that it took the MATLAB script to run. The
+code is as follows:
 
 ```bash
 #!/bin/bash
@@ -143,12 +147,29 @@ $MATLABPATH -nodesktop -nosplash -r "addpath('"$PWD"'); disp(['Added ', '"$PWD"'
 echo "The job took $(($(date +'%s') - $start)) seconds"
 ```
 
+The first line is called a shebang, and tells the job scheduler that this script should be 
+run in a bash shell (the default of Kepler). The subsequent lines with a `#$` are options that we are adding to the 
+job submission. They could also be specified as command line arguments. 
+The purpose of the options are as follows:
 
-1. tells the job scheduler to execute the job in the current working directory.
-2. "-j y" means to merge the standard error stream into the standard output stream instead of having two separate error and output streams.
-3. tells the job scheduler to use the bash shell (default on Kepler)
-4. if you want to watch the job run  -sync y
+- `cwd` - tells the job scheduler to execute the job in the current working directory
+- `-o` - specifies the output file name
+- `-j y` - merge the standard error and standard output streams. This will be recorded into the output file.
 
+
+In this case, we want to submit the job `run.sh`. The corresponding syntax is:
+
+```bash
+qsub -q std run.sh
+```
+
+To check on the status of the job, you can enter:
+
+```bash
+qstat -u $USER
+```
+
+Which will look for any jobs submitted using your username.
 
 ### Note: 
 The double quotes around `$PWD` the expand the environmental variable to give
@@ -160,9 +181,9 @@ be present.
 
 # Helpful Links
 
-    - (Bash Tutorial)[http://korflab.ucdavis.edu/Unix_and_Perl/current.html]
-    - (SLU HPC Getting Started)[https://sites.google.com/a/slu.edu/atg/getting-started?pli=1]
-    - (Sun Grid Engine)[http://genomics.princeton.edu/support/grids/sge.shtml]
-    - (More SGE Info)[https://hpc.oit.uci.edu/running-jobs]
+- (Bash Tutorial)[http://korflab.ucdavis.edu/Unix_and_Perl/current.html]
+- (SLU HPC Getting Started)[https://sites.google.com/a/slu.edu/atg/getting-started?pli=1]
+- (Sun Grid Engine)[http://genomics.princeton.edu/support/grids/sge.shtml]
+- (More SGE Info)[https://hpc.oit.uci.edu/running-jobs]
 
 
