@@ -173,7 +173,7 @@ Which will look for any jobs submitted using your username.
 
 ### Notes: 
 
-The path to the MATLAB can be found from `which matlab` when you are on the login node. 
+The path to the MATLAB executable can be found from `which matlab` when you are on the login node. 
 
 The double quotes around `$PWD` the expand the environmental variable to give
 the full path of the directory in which this script is executed. When using the `addpath()` 
