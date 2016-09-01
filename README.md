@@ -110,7 +110,7 @@ For more information please see the "Job Input and Output" section of [this arti
 
 ------------------------------------------------------------
 
-# A Note on Project Management
+# Project Management
 
 The Git command-line utility is available if you are at the login-node. Git is a great 
 version control system that allows one to manage large projects and syncronize source 
