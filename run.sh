@@ -1,16 +1,14 @@
 #!/bin/bash
-#$ -cwd -  
-#$ -j y   
-#$ -S /bin/bash 
+#$ -cwd
+#$ -o job_output.txt
+#$ -j y
+#$ -S /bin/bash
 
-# 1. tells the job scheduler to execute the job in the current working directory.
-# 2. "-j y" means to merge the standard error stream into the standard output stream 
-#         instead of having two separate error and output streams.  
-# 3. tells the job scheduler to use the bash shell (default on Kepler)
-
-# -----------------------------------------
-#      Commands to Run the Application 
 # ------------------------------------------
-date
-module load matlab
-matlab -nodesktop -nosplash -r "run myscript.m; quit()"
+#      Commands to Run the Application
+# ------------------------------------------
+start=$(date +'%s')
+MATLABPATH="/cm/shared/apps/matlab/R2015a/bin/matlab"
+$MATLABPATH -nodesktop -nosplash -r "addpath('"$PWD"'); disp(['Added ', '"$PWD"', ' to path']); run myscript.m; exit";
+echo "The job took $(($(date +'%s') - $start)) seconds"
+
