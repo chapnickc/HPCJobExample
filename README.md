@@ -80,8 +80,8 @@ jobs, please see the section below about non-interactive jobs.
 
 To enter an interactive login session, you can use one of Kepler's two interactive queues:
 
-    1. apprun
-    2. apprun_mnt_xfs (for nodes that have access to the infiniband storage space)
+1. apprun
+2. apprun_mnt_xfs (for nodes that have access to the infiniband storage space)
 
 Use the following syntax:
 
