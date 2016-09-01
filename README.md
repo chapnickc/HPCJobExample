@@ -184,9 +184,9 @@ be present.
 
 # Helpful Links
 
-- (Bash Tutorial)[http://korflab.ucdavis.edu/Unix_and_Perl/current.html]
-- (SLU HPC Getting Started)[https://sites.google.com/a/slu.edu/atg/getting-started?pli=1]
-- (Sun Grid Engine)[http://genomics.princeton.edu/support/grids/sge.shtml]
-- (More SGE Info)[https://hpc.oit.uci.edu/running-jobs]
+- [Bash Tutorial](http://korflab.ucdavis.edu/Unix_and_Perl/current.html)
+- [SLU HPC Getting Started](https://sites.google.com/a/slu.edu/atg/getting-started?pli=1)
+- [Sun Grid Engine](http://genomics.princeton.edu/support/grids/sge.shtml)
+- [More SGE Info](https://hpc.oit.uci.edu/running-jobs)
 
 
