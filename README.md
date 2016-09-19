@@ -163,6 +163,12 @@ In this case, we want to submit the job `run.sh`. The corresponding syntax is:
 qsub -q std run.sh
 ```
 
+Or if you would like to submit many jobs at once:
+
+```bash
+for i in {1..10}; do qsub -q std run.sh; done
+```
+
 To check on the status of the job, you can enter:
 
 ```bash
@@ -170,6 +176,7 @@ qstat -u $USER
 ```
 
 Which will look for any jobs submitted using your username.
+
 
 ### Notes: 
 
